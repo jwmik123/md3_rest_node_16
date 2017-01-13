@@ -1,5 +1,5 @@
 /**
- * Configuration for the websever (express). Routing, middleware
+ * Configuration for the webserver (express). Routing, middleware
  */
 var config = require('./config'),
     express = require('express'),
@@ -54,7 +54,7 @@ module.exports = function() {
     /**
      * include all routing configuration
      */
-    require('../routes/user.routes.js')(app);
+    require('../routes/favorites.routes.js')(app);
 
     // export the express app
     return app;

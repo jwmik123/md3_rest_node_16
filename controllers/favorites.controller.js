@@ -15,15 +15,15 @@ exports.read = function(req, res) {
  */
 exports.list = function(req, res) {
 
-    console.log("voor nu geven we altijd dezelfde lijst terug met users");
+    console.log("voor nu geven we altijd dezelfde lijst terug met favorieten");
 
-    var users = [
-        {name: "Beren"},
-        {name: "Hugo"},
-        {name: "Ingrid"}
+    var favorites = [
+        {name: "Leslie"},
+        {name: "Donovan"},
+        {name: "Mike"}
     ];
 
-    res.json(users);
+    res.json(favorites);
 };
 
 /**
@@ -31,18 +31,18 @@ exports.list = function(req, res) {
  * @param req - the request object
  * @param res - our response to the request
  * @param next - the next function that needs to be executed
- * @param userID - the userID from the URL
+ * @param favoriteID - the favoriteID from the URL
  */
-exports.getUserByID = function(req, res, next, userID) {
+exports.getFavoritesByID = function(req, res, next, favoriteID) {
 
     /** als we mongodb gebruiken dan gaan we in deze functie de user opzoeken */
 
-    console.log("je zoekt de user met id: " + userID);
+    console.log("je zoekt de user met id: " + favoriteID);
 
-    console.log("voor nu geef ik je een standaard object terug");
-    req.user = {
-        name: "Berend",
-        age: 33
+    console.log("voor nu geef k je een standaard object terug");
+    req.favorites = {
+        name: "Joël",
+        age: 19
     };
 
     /** de volgende Middleware/functie mag aan de slag */
